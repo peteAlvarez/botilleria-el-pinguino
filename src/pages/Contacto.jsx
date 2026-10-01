@@ -8,10 +8,9 @@ export default function Contacto() {
     <main className="page-main">
       <div className="contact-container">
         <div className="contact-card">
-          <div style={{ textAlign: 'center' }}>
-            <span className="heroBadge">Atención Personalizada</span>
-            <h1 className="hero-title">Ubicación & Contacto</h1>
-            <p className="hero-subtitle">
+          <div className="contact-header">
+            <h1 className="contact-title">Ubicación & Contacto</h1>
+            <p className="contact-subtitle">
               Estamos listos para atenderte. Visítanos en nuestro local o comunícate vía WhatsApp.
             </p>
           </div>

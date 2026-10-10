@@ -39,8 +39,11 @@ export default function Productos() {
   return (
     <main className="page-main">
       <section className="hero-banner">
-        <h1 className="hero-title">Botilleria El Pingüino</h1>
-    
+        <span className="hero-tag">SIEMPRE CERCA, SIEMPRE AL DÍA</span>
+        <h1 className="hero-title">Botillería El Pingüino.</h1>
+        <p className="hero-subtitle">
+          Catálogo: Aquí tienes el valor de nuestros productos.
+        </p>
       </section>
 
       <div className="filter-section">
@@ -76,7 +79,7 @@ export default function Productos() {
       {loading ? (
         <div className="loading-box">
           <div className="spinner"></div>
-          <p>Cargando productos de Bodega El Pingüino...</p>
+          <p>Cargando productos de Botillería El Pingüino...</p>
         </div>
       ) : (
         <>
@@ -86,13 +89,14 @@ export default function Productos() {
 
           <div className="product-grid">
             {bebidasFiltradas.map((prod) => {
-              const mensajeWsp = `¡Hola! Necesito ayuda o más información sobre el producto: ${prod.nombre} en Bodega El Pingüino`;
+              const mensajeWsp = `¡Hola! Necesito información sobre el producto: ${prod.nombre} en Botillería El Pingüino`;
 
               return (
                 <div key={prod.id} className="product-card">
                   <div>
                     <div className="card-top">
                       <span className="card-category">{prod.categoria}</span>
+                      <span className="card-tag">SELECCIÓN</span>
                     </div>
 
                     <h3 className="product-name">{prod.nombre}</h3>
@@ -107,9 +111,9 @@ export default function Productos() {
 
                   <div className="price-row">
                     <div>
-                      <span className="price-label">Precio</span>
+                      <span className="price-label">Precio Referencial</span>
                       <div className="price-amount">
-                        ${Number(prod.precio).toLocaleString('es-CL')}
+                        \${Number(prod.precio).toLocaleString('es-CL')}
                         <span className="price-currency"> CLP</span>
                       </div>
                     </div>
@@ -119,7 +123,7 @@ export default function Productos() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-wsp"
-                      title="¿Necesitas ayuda con este producto? Escríbenos por WhatsApp"
+                      title="Consultar por WhatsApp"
                     >
                       <MessageCircle size={20} />
                     </a>
